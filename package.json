@@ -9,7 +9,7 @@
     "format": "run-s format:*",
     "format:files": "prettier --write \"**/*.{json,md}\"",
     "format:package-json": "prettier-package-json --write",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint --ext .js test"
   },
   "dependencies": {
     "eslint-config-prettier": "6.11.0",
