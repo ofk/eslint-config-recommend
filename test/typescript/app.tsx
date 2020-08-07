@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Text } from './text';
 import { Button } from './button';
 
-const App = ({ name }) => {
+const App: React.FC<{ name: string }> = ({ name }) => {
   const [text, setText] = useState(undefined);
   const onClick = useCallback(() => {
     setText((prevText) => `Hello ${prevText || name}!`);

@@ -1,6 +1,6 @@
-const add = (a, b) => a + b;
+const add = <T extends number>(a: T, b: T): number => a + b;
 
-const sum = (values) => {
+const sum = (values: number[]): number => {
   let total = 0;
   for (let i = 0; i < values.length; i += 1) {
     total = add(total, values[i]);
@@ -10,7 +10,7 @@ const sum = (values) => {
 
 export const average = (values: number[]): number => sum(values) / values.length;
 
-const squaredDifference = (values) => {
+const squaredDifference = (values: number[]): number[] => {
   const avg = average(values);
   return values.map((value) => (value - avg) ** 2);
 };

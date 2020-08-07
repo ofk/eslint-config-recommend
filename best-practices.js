@@ -16,6 +16,8 @@ module.exports = {
     {
       files: ['**/*.ts', '**/*.tsx'],
       rules: {
+        // Define types more strictly.
+        '@typescript-eslint/explicit-function-return-type': 'error',
         // Allow single extends empty interface.
         '@typescript-eslint/no-empty-interface': [
           'error',
