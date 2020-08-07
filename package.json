@@ -7,9 +7,9 @@
   "main": "index.js",
   "scripts": {
     "format": "run-s format:*",
-    "format:files": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format:files": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",
     "format:package-json": "prettier-package-json --write",
-    "test": "eslint --ext .js,.jsx test"
+    "test": "eslint --ext .js,.jsx,.ts,.tsx test"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "3.8.0",
