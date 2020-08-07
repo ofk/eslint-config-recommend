@@ -12,4 +12,13 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['**/*.ts', '**/*.tsx'],
+      rules: {
+        // Use type, not PropTypes.
+        'react/prop-types': 'off',
+      },
+    },
+  ],
 };
