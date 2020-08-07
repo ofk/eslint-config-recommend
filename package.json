@@ -3,6 +3,14 @@
   "description": "eslint config with typescript and prettier support",
   "license": "MIT",
   "author": "ofk <ofkjpn+npm@gmail.com> (https://github.com/ofk/)",
+  "homepage": "https://github.com/ofk/eslint-config-recommend#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:ofk/eslint-config-recommend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ofk/eslint-config-recommend/issues"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
