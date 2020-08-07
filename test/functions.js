@@ -1,18 +1,18 @@
-var add = (a, b) => a + b;
+const add = (a, b) => a + b;
 
-var sum = (values) => {
-  var total = 0;
-  for (var i = 0; i < values.length; ++i) {
+const sum = (values) => {
+  let total = 0;
+  for (let i = 0; i < values.length; i += 1) {
     total = add(total, values[i]);
   }
   return total;
 };
 
-var average = (values) => sum(values) / values.length;
+export const average = (values) => sum(values) / values.length;
 
-var squaredDifference = (values) => {
-  var avg = average(values);
-  return values.map((value) => Math.pow(value - avg, 2));
+const squaredDifference = (values) => {
+  const avg = average(values);
+  return values.map((value) => (value - avg) ** 2);
 };
 
-var variance = (values) => sum(squaredDifference(values));
+export const variance = (values) => sum(squaredDifference(values));

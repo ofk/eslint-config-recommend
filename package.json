@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "format": "run-s format:*",
-    "format:files": "prettier --write \"**/*.{json,md}\"",
+    "format:files": "prettier --write \"**/*.{js,json,md}\"",
     "format:package-json": "prettier-package-json --write",
     "test": "eslint --ext .js test"
   },
