@@ -1,0 +1,11 @@
+{
+  "name": "@ofk/eslint-config-recommend",
+  "version": "1.0.0",
+  "description": "eslint config with typescript and prettier support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ofk <ofkjpn+npm@gmail.com> (https://github.com/ofk/)",
+  "license": "MIT"
+}
