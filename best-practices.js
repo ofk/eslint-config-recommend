@@ -1,3 +1,5 @@
+const { isInstalled } = require('./utils');
+
 module.exports = {
   rules: {
     // Prohibit default export.
@@ -25,8 +27,12 @@ module.exports = {
             allowSingleExtends: true,
           },
         ],
-        // Use type, not PropTypes.
-        'react/prop-types': 'off',
+        ...(isInstalled('react')
+          ? {
+              // Use type, not PropTypes.
+              'react/prop-types': 'off',
+            }
+          : {}),
       },
     },
   ],

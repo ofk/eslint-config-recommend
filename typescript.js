@@ -1,3 +1,5 @@
+const { isInstalled } = require('./utils');
+
 module.exports = {
   overrides: [
     {
@@ -14,12 +16,16 @@ module.exports = {
             '.jsx': 'never',
           },
         ],
-        'react/jsx-filename-extension': [
-          'error',
-          {
-            extensions: ['.jsx', '.tsx'],
-          },
-        ],
+        ...(isInstalled('react')
+          ? {
+              'react/jsx-filename-extension': [
+                'error',
+                {
+                  extensions: ['.jsx', '.tsx'],
+                },
+              ],
+            }
+          : {}),
       },
     },
   ],
