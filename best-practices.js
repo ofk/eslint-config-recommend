@@ -16,6 +16,13 @@ module.exports = {
     {
       files: ['**/*.ts', '**/*.tsx'],
       rules: {
+        // Allow single extends empty interface.
+        '@typescript-eslint/no-empty-interface': [
+          'error',
+          {
+            allowSingleExtends: true,
+          },
+        ],
         // Use type, not PropTypes.
         'react/prop-types': 'off',
       },
