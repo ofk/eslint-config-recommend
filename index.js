@@ -1,3 +1,5 @@
 module.exports = {
-  extends: ['./airbnb.js', './typescript.js', './prettier.js'].map(require.resolve),
+  extends: ['./airbnb.js', './comments.js', './typescript.js', './prettier.js'].map(
+    require.resolve
+  ),
 };
