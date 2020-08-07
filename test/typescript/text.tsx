@@ -6,7 +6,7 @@ interface TextProps {
   children: React.ReactNode;
 }
 
-const Text: React.FC<TextProps> = ({ color, children }) => (
+export const Text: React.FC<TextProps> = ({ color, children }) => (
   <span className="text" style={{ color }}>
     {children}
   </span>
@@ -20,5 +20,3 @@ Text.propTypes = {
 Text.defaultProps = {
   color: 'black',
 };
-
-export default Text;

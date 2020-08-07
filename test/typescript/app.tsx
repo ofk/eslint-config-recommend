@@ -2,8 +2,8 @@ import React, { useState, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import Text from './text';
-import Button from './button';
+import { Text } from './text';
+import { Button } from './button';
 
 const App = ({ name }) => {
   const [text, setText] = useState(undefined);
