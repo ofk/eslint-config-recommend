@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/ofk/eslint-config-recommend/issues"
   },
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "index.js",
   "scripts": {
     "format": "run-s format:*",
