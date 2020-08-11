@@ -16,10 +16,7 @@ It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettie
 
    ```json
    "eslintConfig": {
-     "extends": [
-       "@ofk/eslint-config-recommend",
-       "@ofk/eslint-config-recommend/best-practices"
-     ]
+     "extends": "@ofk/eslint-config-recommend"
    }
    ```
 
