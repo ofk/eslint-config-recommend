@@ -27,7 +27,7 @@ module.exports = {
             allowSingleExtends: true,
           },
         ],
-        // temp
+        // Relax a warning rule for unused variables
         '@typescript-eslint/no-unused-vars': [
           'warn',
           {
