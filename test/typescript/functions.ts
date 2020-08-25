@@ -25,3 +25,15 @@ export const omit = <T, K extends keyof T>(value: T, key: K): Omit<T, K> => {
 export const noop = (_value: never): void => {
   // do nothing
 };
+
+export const createCounter = (
+  initialCount = 0
+): [getCount: () => number, setCount: (diff: number) => void] => {
+  let count = initialCount;
+  return [
+    (): number => count,
+    (diff): void => {
+      count += diff;
+    },
+  ];
+};
