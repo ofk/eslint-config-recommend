@@ -27,6 +27,14 @@ module.exports = {
             allowSingleExtends: true,
           },
         ],
+        // temp
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {
+            ignoreRestSiblings: true,
+            argsIgnorePattern: '^_',
+          },
+        ],
         ...(isInstalled('react')
           ? {
               // Use type, not PropTypes.
