@@ -6,6 +6,12 @@ module.exports = {
       files: ['**/*.ts', '**/*.tsx'],
       extends: ['plugin:import/typescript', 'plugin:@typescript-eslint/recommended'],
       rules: {
+        // cf. https://github.com/airbnb/javascript/blob/eslint-config-airbnb-v18.2.0/packages/eslint-config-airbnb-base/rules/variables.js#L41-L42
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-use-before-define': [
+          'error',
+          { functions: true, classes: true, variables: true },
+        ],
         'import/extensions': [
           'error',
           {
