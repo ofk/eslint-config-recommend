@@ -37,3 +37,7 @@ export const createCounter = (
     },
   ];
 };
+
+export const run = <T>(obj: T, fn: (obj: T) => void): void => {
+  fn(obj);
+};
