@@ -2,7 +2,7 @@ const { isInstalled } = require('./utils');
 
 module.exports = {
   extends: [
-    'plugin:prettier/recommended',
+    'prettier',
     'prettier/@typescript-eslint',
     ...(isInstalled('react') ? ['prettier/react'] : []),
   ],
