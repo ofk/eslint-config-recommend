@@ -20,6 +20,7 @@
     "lint": "run-s lint:*",
     "lint:files": "prettier -l .",
     "lint:package-json": "prettier-package-json -l",
+    "prepare": "husky install",
     "test": "eslint --ext .js,.jsx,.ts,.tsx test"
   },
   "dependencies": {
