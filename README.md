@@ -8,7 +8,7 @@ It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettie
 
 1. Install the following dev-dependencies:
 
-   ```
+   ```sh
    npm install --save-dev @ofk/eslint-config-recommend eslint prettier typescript
    ```
 
@@ -16,7 +16,11 @@ It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettie
 
    ```json
    "eslintConfig": {
-     "extends": "@ofk/eslint-config-recommend"
+     "extends": "@ofk/eslint-config-recommend",
+     // When using in TypeScript. Delete it when using in JavaScript.
+     "parserOptions": {
+       "project": "./tsconfig.json"
+     }
    }
    ```
 
