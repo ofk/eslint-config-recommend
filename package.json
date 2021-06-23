@@ -21,7 +21,9 @@
     "lint:files": "prettier -l .",
     "lint:package-json": "prettier-package-json -l",
     "prepare": "husky install",
-    "test": "eslint --ext .js,.jsx,.ts,.tsx test"
+    "test": "run-p test:*",
+    "test:javascript": "eslint --ext .js,.jsx test/javascript",
+    "test:typescript": "eslint --ext .ts,.tsx test/typescript"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "4.25.0",
