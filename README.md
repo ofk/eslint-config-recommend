@@ -14,7 +14,7 @@ It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettie
 
 2. Extend the `@ofk/eslint-config-recommend` config in your `.eslintrc` (or `eslintConfig` key in your `package.json`):
 
-   ```json
+   ```js
    "eslintConfig": {
      "extends": "@ofk/eslint-config-recommend",
      // When using in TypeScript. Delete it when using in JavaScript.
@@ -26,7 +26,7 @@ It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettie
 
 3. Run `eslint` on your project as part of your `lint` and `format` scripts:
 
-   ```json
+   ```js
    "scripts": {
      "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
      "format": "npm run lint -- --fix",
@@ -37,7 +37,7 @@ It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettie
 
 4. (Optional) Set up prettier config in `prettier` key in your `package.json`:
 
-   ```json
+   ```js
    "prettier": "@ofk/eslint-config-recommend/.prettierrc"
    ```
 
