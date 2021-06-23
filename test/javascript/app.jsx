@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import React, { useCallback, useState } from 'react';
+import ReactDOM from 'react-dom';
 
-import { Text } from './text';
 import { Button } from './button';
+import { Text } from './text';
 
 const App = ({ name }) => {
   const [text, setText] = useState(undefined);
