@@ -5,7 +5,7 @@ import { Button } from './button';
 import { Text } from './text';
 
 const App: React.FC<{ name: string }> = ({ name }) => {
-  const [text, setText] = useState(undefined);
+  const [text, setText] = useState<string | undefined>(undefined);
   const onClick = useCallback(() => {
     setText((prevText) => `Hello ${prevText || name}!`);
   }, [name]);
