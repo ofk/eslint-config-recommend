@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface TextProps {
-  color?: string; // eslint-disable-line react/require-default-props
+  color?: string;
   children: React.ReactNode;
 }
 
