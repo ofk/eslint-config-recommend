@@ -43,9 +43,15 @@ module.exports = {
         ],
         ...(isInstalled('react')
           ? {
+              // Allow JSX props spreading in the tsx file.
+              // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+              'react/jsx-props-no-spreading': 'off',
               // Use type, not PropTypes.
               // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
               'react/prop-types': 'off',
+              // Use default parameters, not DefaultProps
+              // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+              'react/require-default-props': 'off',
             }
           : {}),
       },
