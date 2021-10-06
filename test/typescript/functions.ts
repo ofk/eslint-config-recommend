@@ -39,5 +39,16 @@ export const createCounter = (
 };
 
 export const run = <T>(obj: T, fn: (obj: T) => void): void => {
-  fn(obj);
+  try {
+    fn(obj);
+  } catch (e: unknown) {
+    console.error(e);
+    throw e;
+  }
+};
+
+export const loop = (fn: () => boolean | undefined): void => {
+  while (true) {
+    if (fn() === false) break;
+  }
 };
