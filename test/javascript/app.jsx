@@ -5,11 +5,12 @@ import ReactDOM from 'react-dom';
 import { Button } from './button';
 import { Text } from './text';
 
-const App = ({ name }) => {
+const App = ({ name, onButtonClick }) => {
   const [text, setText] = useState(undefined);
   const onClick = useCallback(() => {
     setText((prevText) => `Hello ${prevText || name}!`);
-  }, [name]);
+    if (onButtonClick) onButtonClick();
+  }, [name, onButtonClick]);
   return (
     <div>
       <Text color={text ? 'red' : undefined}>{text || 'Push button'}</Text>
@@ -20,6 +21,11 @@ const App = ({ name }) => {
 
 App.propTypes = {
   name: PropTypes.string.isRequired,
+  onButtonClick: PropTypes.func,
+};
+
+App.defaultProps = {
+  onButtonClick: undefined,
 };
 
 ReactDOM.render(<App name="world" />, document.querySelector('#app'));
