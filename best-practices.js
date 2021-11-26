@@ -16,6 +16,13 @@ module.exports = {
         allow: ['warn', 'error'],
       },
     ],
+    ...(isInstalled('react')
+      ? {
+          // Disable this rule if it conflicts with some rules.
+          // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+          'react/function-component-definition': 'off',
+        }
+      : {}),
   },
   overrides: [
     {
