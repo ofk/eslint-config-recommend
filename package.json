@@ -1,18 +1,15 @@
 {
   "name": "@ofk/eslint-config-recommend",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "description": "eslint config with typescript and prettier support",
   "license": "MIT",
   "author": "ofk <ofkjpn+npm@gmail.com> (https://github.com/ofk/)",
-  "homepage": "https://github.com/ofk/eslint-config-recommend#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:ofk/eslint-config-recommend.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ofk/eslint-config-recommend/issues"
-  },
+  "repository": "ofk/eslint-config-recommend",
   "main": "index.js",
+  "files": [
+    "*.js",
+    ".prettierrc.json"
+  ],
   "scripts": {
     "format": "run-s format:*",
     "format:files": "npm run lint:files -- --write",
