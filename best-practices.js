@@ -51,14 +51,6 @@ module.exports = {
             allowSingleExtends: true,
           },
         ],
-        // Disallow any type errors.
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md
-        '@typescript-eslint/no-implicit-any-catch': [
-          'warn',
-          {
-            allowExplicitAny: false,
-          },
-        ],
         // Prevents unnecessary condition instead of no-constant-condition.
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
         'no-constant-condition': 'off',
