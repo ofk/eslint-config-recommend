@@ -27,7 +27,7 @@ export const noop = (_value: never): void => {
 };
 
 export const createCounter = (
-  initialCount = 0
+  initialCount = 0,
 ): [getCount: () => number, setCount: (diff: number) => void] => {
   let count = initialCount;
   return [

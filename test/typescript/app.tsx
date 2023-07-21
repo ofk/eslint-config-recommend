@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { Button } from './button';
 import { Text } from './text';
@@ -20,4 +20,4 @@ const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
   );
 };
 
-ReactDOM.render(<App name="world" />, document.querySelector('#app'));
+createRoot(document.querySelector('#app')!).render(<App name="world" />);

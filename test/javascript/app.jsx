@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useCallback, useState } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { Button } from './button';
 import { Text } from './text';
@@ -28,4 +28,4 @@ App.defaultProps = {
   onButtonClick: undefined,
 };
 
-ReactDOM.render(<App name="world" />, document.querySelector('#app'));
+createRoot(document.querySelector('#app')).render(<App name="world" />);
