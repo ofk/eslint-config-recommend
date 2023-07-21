@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { Button } from './button';
 import { Text } from './text';
 
-type AppProps<T = {}> = { name: string; onButtonClick?: () => void } & T;
+type AppProps<T = object> = { name: string; onButtonClick?: () => void } & T;
 
 const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
   const [text, setText] = useState<string | undefined>(undefined);

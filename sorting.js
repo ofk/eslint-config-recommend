@@ -4,7 +4,6 @@ module.exports = {
   rules: {
     // Import sorting
     // https://eslint.org/docs/rules/sort-imports
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
     'sort-imports': [
       'error',
       {
@@ -13,6 +12,7 @@ module.exports = {
         ignoreMemberSort: false,
       },
     ],
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
     'import/order': [
       'error',
       {
@@ -24,10 +24,18 @@ module.exports = {
         },
       },
     ],
+    // https://typescript-eslint.io/rules/consistent-type-imports/
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+        fixStyle: 'separate-type-imports',
+      },
+    ],
     ...(isInstalled('react')
       ? {
           // Prop-types sorting
-          // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
+          // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
           'react/sort-prop-types': [
             'error',
             {
