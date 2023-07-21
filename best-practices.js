@@ -4,8 +4,8 @@ module.exports = {
   rules: {
     // Prohibit default export.
     // see. https://basarat.gitbook.io/typescript/main-1/defaultisbad
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-default-export.md
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
     'import/no-default-export': 'error',
     'import/prefer-default-export': 'off',
     // Use console.{warn,error} intentionally. So suppress the warning.
@@ -19,7 +19,7 @@ module.exports = {
     ...(isInstalled('react')
       ? {
           // Disable this rule if it conflicts with some rules.
-          // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+          // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
           'react/function-component-definition': 'off',
         }
       : {}),
@@ -29,7 +29,7 @@ module.exports = {
       files: ['**/*.ts', '**/*.tsx'],
       rules: {
         // Enforce using type imports.
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md
+        // https://typescript-eslint.io/rules/consistent-type-imports/
         '@typescript-eslint/consistent-type-imports': [
           'error',
           {
@@ -38,13 +38,13 @@ module.exports = {
           },
         ],
         // Define types more strictly.
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-function-return-type.md
+        // https://typescript-eslint.io/rules/explicit-function-return-type/
         '@typescript-eslint/explicit-function-return-type': 'error',
         // Enforce using property signature for functions.
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/method-signature-style.md
+        // https://typescript-eslint.io/rules/method-signature-style/
         '@typescript-eslint/method-signature-style': ['error', 'property'],
         // Allow single extends empty interface.
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-interface.md
+        // https://typescript-eslint.io/rules/no-empty-interface/
         '@typescript-eslint/no-empty-interface': [
           'error',
           {
@@ -52,7 +52,7 @@ module.exports = {
           },
         ],
         // Prevents unnecessary condition instead of no-constant-condition.
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
+        // https://typescript-eslint.io/rules/no-unnecessary-condition/
         'no-constant-condition': 'off',
         '@typescript-eslint/no-unnecessary-condition': [
           'warn',
@@ -62,7 +62,7 @@ module.exports = {
           },
         ],
         // Relax a warning rule for unused variables.
-        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
+        // https://typescript-eslint.io/rules/no-unused-vars/
         '@typescript-eslint/no-unused-vars': [
           'warn',
           {
@@ -72,25 +72,14 @@ module.exports = {
         ],
         ...(isInstalled('react')
           ? {
-              // Define type Props = {}.
-              // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
-              '@typescript-eslint/ban-types': [
-                'error',
-                {
-                  extendDefaults: true,
-                  types: {
-                    '{}': false,
-                  },
-                },
-              ],
               // Allow JSX props spreading in the tsx file.
-              // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+              // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
               'react/jsx-props-no-spreading': 'off',
               // Use type, not PropTypes.
-              // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+              // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md
               'react/prop-types': 'off',
               // Use default parameters, not DefaultProps
-              // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+              // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
               'react/require-default-props': 'off',
             }
           : {}),

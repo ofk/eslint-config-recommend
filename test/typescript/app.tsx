@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { Button } from './button';
 import { Text } from './text';
 
-type AppProps<T = {}> = { name: string; onButtonClick?: () => void } & T;
+type AppProps<T = object> = { name: string; onButtonClick?: () => void } & T;
 
 const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
   const [text, setText] = useState<string | undefined>(undefined);
@@ -20,4 +20,4 @@ const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
   );
 };
 
-ReactDOM.render(<App name="world" />, document.querySelector('#app'));
+createRoot(document.querySelector('#app')!).render(<App name="world" />);
