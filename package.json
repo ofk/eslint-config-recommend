@@ -11,12 +11,12 @@
     ".prettierrc.json"
   ],
   "scripts": {
-    "format": "run-s format:*",
-    "format:files": "npm run lint:files -- --write",
-    "format:package-json": "prettier-package-json --write",
-    "lint": "run-s lint:*",
-    "lint:files": "prettier -l .",
+    "lint": "run-s -c lint:*",
     "lint:package-json": "prettier-package-json -l",
+    "lint:prettier": "prettier --check .",
+    "lint-fix": "run-s -c lint-fix:*",
+    "lint-fix:package-json": "prettier-package-json --write",
+    "lint-fix:prettier": "prettier --write .",
     "prepare": "husky install",
     "test": "run-p test:*",
     "test:javascript": "eslint --ext .js,.jsx test/javascript",
@@ -52,7 +52,7 @@
     "*.{js,jsx,json,md,ts,tsx}": "prettier --write",
     "package.json": [
       "prettier --write",
-      "npm run format:package-json"
+      "npm run lint-fix:package-json"
     ]
   }
 }
