@@ -1,4 +1,5 @@
 module.exports = {
+  // https://mysticatea.github.io/eslint-plugin-eslint-comments/#%F0%9F%93%96-usage
   extends: ['plugin:eslint-comments/recommended'],
   rules: {
     // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
