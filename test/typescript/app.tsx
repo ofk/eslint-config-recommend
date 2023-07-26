@@ -9,12 +9,12 @@ type AppProps<T = object> = { name: string; onButtonClick?: () => void } & T;
 const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
   const [text, setText] = useState<string | undefined>(undefined);
   const onClick = useCallback(() => {
-    setText((prevText) => `Hello ${prevText || name}!`);
+    setText((prevText) => `Hello ${prevText ?? name}!`);
     onButtonClick?.();
   }, [name, onButtonClick]);
   return (
     <div>
-      <Text color={text ? 'red' : undefined}>{text || 'Push button'}</Text>
+      <Text color={text ? 'red' : undefined}>{text ?? 'Push button'}</Text>
       <Button onClick={onClick}>Hello</Button>
     </div>
   );

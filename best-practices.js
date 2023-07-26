@@ -55,7 +55,7 @@ module.exports = {
         // https://typescript-eslint.io/rules/no-unnecessary-condition/
         'no-constant-condition': 'off',
         '@typescript-eslint/no-unnecessary-condition': [
-          'warn',
+          'error',
           {
             allowConstantLoopConditions: true,
             allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
@@ -70,6 +70,10 @@ module.exports = {
             argsIgnorePattern: '^_',
           },
         ],
+        // Disabled until no-restricted-syntax rules change
+        // cf. https://github.com/airbnb/javascript/issues/1122
+        // https://typescript-eslint.io/rules/prefer-for-of/
+        '@typescript-eslint/prefer-for-of': 'off',
         ...(isInstalled('react')
           ? {
               // Allow JSX props spreading in the tsx file.
