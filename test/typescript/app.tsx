@@ -20,4 +20,5 @@ const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 createRoot(document.querySelector('#app')!).render(<App name="world" />);
