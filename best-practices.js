@@ -34,6 +34,7 @@ module.exports = {
           'error',
           {
             prefer: 'type-imports',
+            fixStyle: 'separate-type-imports',
             disallowTypeAnnotations: true,
           },
         ],
@@ -51,6 +52,9 @@ module.exports = {
             allowSingleExtends: true,
           },
         ],
+        // Disallow type imports with side effects.
+        // https://typescript-eslint.io/rules/no-import-type-side-effects/
+        '@typescript-eslint/no-import-type-side-effects': 'error',
         // Prevents unnecessary condition instead of no-constant-condition.
         // https://typescript-eslint.io/rules/no-unnecessary-condition/
         'no-constant-condition': 'off',
@@ -74,6 +78,9 @@ module.exports = {
         // cf. https://github.com/airbnb/javascript/issues/1122
         // https://typescript-eslint.io/rules/prefer-for-of/
         '@typescript-eslint/prefer-for-of': 'off',
+        // Disallow inline type imports.
+        // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/consistent-type-specifier-style.md
+        'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
         ...(isInstalled('react')
           ? {
               // Allow JSX props spreading in the tsx file.
