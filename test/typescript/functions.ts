@@ -52,3 +52,7 @@ export const loop = (fn: () => boolean | undefined): void => {
     if (fn() === false) break;
   }
 };
+
+export const touch = (): void => {
+  void fetch('./touch');
+};

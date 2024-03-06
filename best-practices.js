@@ -28,6 +28,14 @@ module.exports = {
     {
       files: ['**/*.ts', '**/*.tsx'],
       rules: {
+        // Suppress no-floating-promises
+        // https://eslint.org/docs/latest/rules/no-void
+        'no-void': [
+          'error',
+          {
+            allowAsStatement: true,
+          },
+        ],
         // Enforce using type imports.
         // https://typescript-eslint.io/rules/consistent-type-imports/
         '@typescript-eslint/consistent-type-imports': [
