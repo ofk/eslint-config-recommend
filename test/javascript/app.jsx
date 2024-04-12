@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { Button } from './button';
 import { Text } from './text';
 
+// eslint-disable-next-line react-refresh/only-export-components
 const App = ({ name, onButtonClick }) => {
   const [text, setText] = useState(undefined);
   const onClick = useCallback(() => {

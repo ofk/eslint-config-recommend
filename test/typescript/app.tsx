@@ -6,6 +6,7 @@ import { Text } from './text';
 
 type AppProps<T = object> = { name: string; onButtonClick?: () => void } & T;
 
+// eslint-disable-next-line react-refresh/only-export-components
 const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
   const [text, setText] = useState<string | undefined>(undefined);
   const onClick = useCallback(() => {
