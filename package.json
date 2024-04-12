@@ -4,7 +4,10 @@
   "description": "eslint config with typescript and prettier support",
   "license": "MIT",
   "author": "ofk <ofkjpn+npm@gmail.com> (https://github.com/ofk/)",
-  "repository": "ofk/eslint-config-recommend",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ofk/eslint-config-recommend.git"
+  },
   "main": "index.js",
   "files": [
     "*.js",
