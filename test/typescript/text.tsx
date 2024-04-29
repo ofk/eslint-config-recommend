@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
+
 import React from 'react';
 
 interface TextProps {
-  color?: string;
   children: ReactNode;
+  color?: string;
 }
 
-export const Text: React.FC<TextProps> = ({ color = 'black', children }) => (
+export const Text: React.FC<TextProps> = ({ children, color = 'black' }) => (
   <span className="text" style={{ color }}>
     {children}
   </span>

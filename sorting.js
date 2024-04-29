@@ -1,52 +1,50 @@
 const { isInstalled } = require('./utils');
 
 module.exports = {
+  extends: 'plugin:perfectionist/recommended-natural',
   rules: {
-    // Import sorting
-    // https://eslint.org/docs/rules/sort-imports
-    'sort-imports': [
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-named-imports
+    'sort-imports': 'off',
+    'import/order': 'off',
+
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-interfaces
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-object-types
+    '@typescript-eslint/adjacent-overload-signatures': 'off',
+
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-jsx-props
+    'react/jsx-sort-props': 'off',
+    'perfectionist/sort-jsx-props': [
       'error',
       {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-      },
-    ],
-    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal'],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
+        type: 'natural',
+        order: 'asc',
+        groups: ['reserved', 'unknown'],
+        'custom-groups': {
+          reserved: '{key,ref}',
         },
       },
     ],
-    // https://typescript-eslint.io/rules/consistent-type-imports/
-    '@typescript-eslint/consistent-type-imports': [
+
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-objects
+    'sort-keys': 'off',
+
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-intersection-types
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-union-types
+    '@typescript-eslint/sort-type-constituents': 'off',
+    'perfectionist/sort-union-types': [
       'error',
       {
-        prefer: 'type-imports',
-        fixStyle: 'separate-type-imports',
+        type: 'natural',
+        order: 'asc',
+        'nullable-last': true,
       },
     ],
-    ...(isInstalled('react')
-      ? {
-          // Prop-types sorting
-          // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
-          'react/sort-prop-types': [
-            'error',
-            {
-              ignoreCase: false,
-              callbacksLast: true,
-              requiredFirst: true,
-              sortShapeProp: true,
-              noSortAlphabetically: false,
-            },
-          ],
-        }
-      : {}),
+
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-svelte-attributes
+    'perfectionist/sort-svelte-attributes': 'off',
+
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-vue-attributes
+    'perfectionist/sort-vue-attributes': 'off',
   },
 };
