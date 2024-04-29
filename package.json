@@ -8,22 +8,24 @@
     "type": "git",
     "url": "git+https://github.com/ofk/eslint-config-recommend.git"
   },
-  "main": "index.js",
+  "main": "index.mjs",
   "files": [
-    "*.js",
+    "*.mjs",
     ".prettierrc.json"
   ],
   "scripts": {
     "lint": "run-s -c lint:*",
+    "lint:eslint": "eslint .",
     "lint:package-json": "prettier-package-json -l",
     "lint:prettier": "prettier --check .",
     "lint-fix": "run-s -c lint-fix:*",
+    "lint-fix:eslint": "eslint . --fix",
     "lint-fix:package-json": "prettier-package-json --write",
     "lint-fix:prettier": "prettier --write .",
     "prepare": "husky install",
     "test": "run-p test:*",
-    "test:javascript": "eslint --ext .js,.jsx test/javascript",
-    "test:typescript": "eslint --ext .ts,.tsx test/typescript"
+    "test:javascript": "eslint -c test/eslint.config.mjs test/javascript",
+    "test:typescript": "eslint -c test/eslint.config.mjs test/typescript"
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.3.0",
