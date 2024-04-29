@@ -1,15 +1,15 @@
 module.exports = {
-  // https://mysticatea.github.io/eslint-plugin-eslint-comments/#%F0%9F%93%96-usage
-  extends: ['plugin:eslint-comments/recommended'],
+  // https://eslint-community.github.io/eslint-plugin-eslint-comments/
+  extends: ['plugin:@eslint-community/eslint-comments/recommended'],
   rules: {
-    // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
-    'eslint-comments/disable-enable-pair': [
+    // https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
+    '@eslint-community/eslint-comments/disable-enable-pair': [
       'error',
       {
         allowWholeFile: true,
       },
     ],
-    // https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unused-disable.html
-    'eslint-comments/no-unused-disable': 'error',
+    // https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unused-disable.html
+    '@eslint-community/eslint-comments/no-unused-disable': 'error',
   },
 };
