@@ -16,11 +16,7 @@ It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettie
 
    ```js
    "eslintConfig": {
-     "extends": "@ofk/eslint-config-recommend",
-     // When using in TypeScript. Delete it when using in JavaScript.
-     "parserOptions": {
-       "project": "./tsconfig.json"
-     }
+     "extends": "@ofk/eslint-config-recommend"
    }
    ```
 
