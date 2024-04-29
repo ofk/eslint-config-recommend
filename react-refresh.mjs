@@ -1,6 +1,6 @@
 import reactRefresh from 'eslint-plugin-react-refresh';
 
-import { isInstalled } from './isInstalled.mjs';
+import { isInstalled } from './isInstalled.cjs';
 
 export default isInstalled('react')
   ? [
