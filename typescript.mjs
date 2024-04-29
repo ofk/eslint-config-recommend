@@ -1,7 +1,7 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import tseslint from 'typescript-eslint';
 
-import { isInstalled } from './isInstalled.mjs';
+import { isInstalled } from './isInstalled.cjs';
 
 const compat = new FlatCompat();
 

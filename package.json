@@ -10,6 +10,7 @@
   },
   "main": "index.mjs",
   "files": [
+    "*.cjs",
     "*.mjs",
     ".prettierrc.json"
   ],

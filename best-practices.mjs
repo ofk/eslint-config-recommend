@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/extensions
 import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 
-import { isInstalled } from './isInstalled.mjs';
+import { isInstalled } from './isInstalled.cjs';
 
 export default [
   {
