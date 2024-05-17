@@ -58,7 +58,7 @@ const bestPractices = {
 module.exports = {
   default: [recommendedNatural, turnOff, bestPractices],
   legacy: {
-    plugins: ['perfectionist'],
+    extends: ['plugin:perfectionist/recommended-natural'],
     rules: { ...turnOff.rules, ...bestPractices.rules },
   },
 };
