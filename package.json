@@ -24,8 +24,8 @@
     "lint-fix:prettier": "prettier --write .",
     "prepare": "husky install",
     "test": "run-p test:*",
-    "test:javascript": "eslint -c test/eslint.config.mjs test/javascript",
-    "test:typescript": "eslint -c test/eslint.config.mjs test/typescript"
+    "test:javascript": "ESLINT_USE_FLAT_CONFIG=true eslint -c test/eslint.config.mjs test/javascript",
+    "test:typescript": "ESLINT_USE_FLAT_CONFIG=true eslint -c test/eslint.config.mjs test/typescript"
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.3.0",
