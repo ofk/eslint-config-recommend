@@ -1,4 +1,3 @@
-const globals = require('globals');
 const airbnb = require('./airbnb.cjs');
 const bestPractices = require('./best-practices.cjs');
 const comments = require('./comments.cjs');
@@ -7,22 +6,32 @@ const reactRefresh = require('./react-refresh.cjs');
 const sorting = require('./sorting.cjs');
 const typescript = require('./typescript.cjs');
 
-module.exports = [
+function mergeConfig(...configs) {
+  return configs.reduce(
+    (acc, config) => ({
+      ...acc,
+      ...config,
+      extends: [...(acc.extends ?? []), ...(config.extends ?? [])],
+      overrides: [...(acc.overrides ?? []), ...(config.overrides ?? [])],
+      plugins: [...(acc.plugins ?? []), ...(config.plugins ?? [])],
+      rules: { ...(acc.rules ?? {}), ...(config.rules ?? {}) },
+    }),
+    {},
+  );
+}
+
+module.exports = mergeConfig(
   {
-    languageOptions: {
-      ecmaVersion: 'latest',
-      globals: globals.browser,
+    env: {
+      browser: true,
     },
   },
-  ...typescript.config(
-    [
-      ...airbnb.default,
-      ...reactRefresh.default,
-      ...comments.default,
-      ...bestPractices.default,
-      ...sorting.default,
-    ],
-    [...typescript.default, ...bestPractices.typescript],
-  ),
-  ...prettier.default,
-];
+  airbnb.legacy,
+  typescript.legacy,
+  reactRefresh.legacy,
+  comments.legacy,
+  sorting.legacy,
+  ...bestPractices.default,
+  ...bestPractices.typescript,
+  prettier.legacy,
+);

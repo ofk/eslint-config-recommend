@@ -1,4 +1,4 @@
-import config from './index.cjs';
+import config from './config.cjs';
 
 export default [
   {
