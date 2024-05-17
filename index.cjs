@@ -11,12 +11,17 @@ function mergeConfig(...configs) {
     (acc, config) => ({
       ...acc,
       ...config,
-      extends: [...(acc.extends ?? []), ...(config.extends ?? [])],
-      overrides: [...(acc.overrides ?? []), ...(config.overrides ?? [])],
-      plugins: [...(acc.plugins ?? []), ...(config.plugins ?? [])],
-      rules: { ...(acc.rules ?? {}), ...(config.rules ?? {}) },
+      extends: [...acc.extends, ...(Array.isArray(config.extends) ? config.extends : [])],
+      overrides: [...acc.overrides, ...(Array.isArray(config.overrides) ? config.overrides : [])],
+      plugins: [...acc.plugins, ...(Array.isArray(config.plugins) ? config.plugins : [])],
+      rules: { ...acc.rules, ...(config.rules ?? {}) },
     }),
-    {},
+    {
+      extends: [],
+      overrides: [],
+      plugins: [],
+      rules: {},
+    },
   );
 }
 
