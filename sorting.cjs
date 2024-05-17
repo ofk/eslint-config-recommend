@@ -1,4 +1,4 @@
-import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural';
+const perfectionistNatural = require('eslint-plugin-perfectionist/configs/recommended-natural');
 
 const perfectionistTurnOff = {
   rules: {
@@ -53,9 +53,11 @@ const perfectionistBestPractices = {
   },
 };
 
-export default [
-  // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
-  perfectionistNatural,
-  perfectionistTurnOff,
-  perfectionistBestPractices,
-];
+module.exports = {
+  default: [
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
+    perfectionistNatural,
+    perfectionistTurnOff,
+    perfectionistBestPractices,
+  ],
+};

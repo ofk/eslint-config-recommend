@@ -1,12 +1,11 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import tseslint from 'typescript-eslint';
-
-import { isInstalled } from './isInstalled.cjs';
+const { FlatCompat } = require('@eslint/eslintrc');
+const tseslint = require('typescript-eslint');
+const { isInstalled } = require('./isInstalled.cjs');
 
 const compat = new FlatCompat();
 
 /** @type {(jsConfigs: import('typescript-eslint').ConfigWithExtends[], tsConfigs: import('typescript-eslint').ConfigWithExtends[]) => import('eslint').FlatConfig[]} */
-export function config(jsConfigs, tsConfigs) {
+function config(jsConfigs, tsConfigs) {
   return [
     ...jsConfigs,
     ...(isInstalled('typescript')
@@ -29,20 +28,20 @@ export function config(jsConfigs, tsConfigs) {
 }
 
 // https://github.com/iamturns/eslint-config-airbnb-typescript#setup
-export const tsAirbnb = compat.extends(
+const tsAirbnb = compat.extends(
   isInstalled('react') ? 'eslint-config-airbnb-typescript' : 'eslint-config-airbnb-typescript/base',
 );
 
 // https://github.com/import-js/eslint-plugin-import#typescript
-export const tsImport = compat.extends('plugin:import/typescript');
+const tsImport = compat.extends('plugin:import/typescript');
 
-export const tsEslint = [
+const tsEslint = [
   ...tseslint.configs.recommendedTypeChecked,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
 ];
 
-export const tsProject = {
+const tsProject = {
   languageOptions: {
     parserOptions: {
       project: true,
@@ -50,4 +49,7 @@ export const tsProject = {
   },
 };
 
-export default [...tsAirbnb, ...tsImport, ...tsEslint, tsProject];
+module.exports = {
+  config,
+  default: [...tsAirbnb, ...tsImport, ...tsEslint, tsProject],
+};

@@ -8,10 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/ofk/eslint-config-recommend.git"
   },
-  "main": "index.mjs",
+  "main": "index.cjs",
   "files": [
     "*.cjs",
-    "*.mjs",
     ".prettierrc.json"
   ],
   "scripts": {
