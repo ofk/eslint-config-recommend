@@ -21,27 +21,17 @@ module.exports = {
             allow: ['warn', 'error', 'assert'],
           },
         ],
-      },
-    },
-    ...(isInstalled('react')
-      ? [
-          {
-            rules: {
+
+        ...(isInstalled('react')
+          ? {
               // Disable this rule if it conflicts with some rules.
               // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
               'react/function-component-definition': 'off',
-            },
-          },
-        ]
-      : []),
-    ...(isInstalled('react') && isInstalled('vite')
-      ? [
-          {
-            // Use JSX runtime.
-            rules: jsxRuntime.rules,
-          },
-        ]
-      : []),
+            }
+          : {}),
+      },
+    },
+    ...(isInstalled('react') && isInstalled('vite') ? [jsxRuntime] : []),
   ],
   typescript: [
     {
@@ -119,12 +109,9 @@ module.exports = {
             allowAsStatement: true,
           },
         ],
-      },
-    },
-    ...(isInstalled('react')
-      ? [
-          {
-            rules: {
+
+        ...(isInstalled('react')
+          ? {
               // Allow JSX props spreading in the tsx file.
               // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
               'react/jsx-props-no-spreading': 'off',
@@ -134,9 +121,9 @@ module.exports = {
               // Use default parameters, not DefaultProps
               // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
               'react/require-default-props': 'off',
-            },
-          },
-        ]
-      : []),
+            }
+          : {}),
+      },
+    },
   ],
 };

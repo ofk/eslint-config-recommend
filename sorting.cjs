@@ -1,6 +1,8 @@
-const perfectionistNatural = require('eslint-plugin-perfectionist/configs/recommended-natural');
+const recommendedNatural = require('eslint-plugin-perfectionist/configs/recommended-natural');
 
-const perfectionistTurnOff = {
+// https://eslint-plugin-perfectionist.azat.io/
+
+const turnOff = {
   rules: {
     // https://eslint-plugin-perfectionist.azat.io/rules/sort-interfaces
     // https://eslint-plugin-perfectionist.azat.io/rules/sort-object-types
@@ -26,7 +28,7 @@ const perfectionistTurnOff = {
   },
 };
 
-const perfectionistBestPractices = {
+const bestPractices = {
   rules: {
     // https://eslint-plugin-perfectionist.azat.io/rules/sort-jsx-props
     'perfectionist/sort-jsx-props': [
@@ -54,10 +56,9 @@ const perfectionistBestPractices = {
 };
 
 module.exports = {
-  default: [
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
-    perfectionistNatural,
-    perfectionistTurnOff,
-    perfectionistBestPractices,
-  ],
+  default: [recommendedNatural, turnOff, bestPractices],
+  legacy: {
+    plugins: ['perfectionist'],
+    rules: { ...turnOff.rules, ...bestPractices.rules },
+  },
 };
