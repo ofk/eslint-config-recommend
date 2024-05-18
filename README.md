@@ -2,7 +2,7 @@
 
 This is an my eslint config.
 
-It uses [Airbnb's](https://github.com/airbnb/javascript) as a base, has [Prettier](https://prettier.io/) and [TypeScript ESLint](https://typescript-eslint.io/) baked in, and overrides some rules I've seen ourselves having to change often.
+It uses [Airbnb TypeScript](https://github.com/iamturns/eslint-config-airbnb-typescript) as a base, has [Prettier](https://prettier.io/) and [TypeScript ESLint](https://typescript-eslint.io/) baked in, and overrides some rules I've seen ourselves having to change often.
 
 ## Quick start
 
