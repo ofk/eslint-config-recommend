@@ -1,3 +1,3 @@
-import config from '../config.cjs';
+import config from '../browser.cjs';
 
 export default config;
