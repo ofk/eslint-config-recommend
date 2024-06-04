@@ -9,13 +9,13 @@ const typescript = require('./typescript.cjs');
 module.exports = [
   ...typescript.config(
     [
-      ...airbnb.default,
+      ...airbnb.compat(),
       ...reactRefresh.default,
       ...comments.default,
       ...bestPractices.default,
       ...sorting.default,
     ],
-    [...typescript.default, ...bestPractices.typescript],
+    [...typescript.compat(), ...bestPractices.typescript],
   ),
   ...prettier.default,
 ];

@@ -10,7 +10,7 @@ const legacyExtends = isInstalled('react')
   : ['eslint-config-airbnb/base'];
 
 module.exports = {
-  default: compat.extends(...legacyExtends),
+  compat: () => compat.extends(...legacyExtends),
   legacy: {
     extends: legacyExtends,
   },
