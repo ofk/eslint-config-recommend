@@ -31,8 +31,7 @@ function config(jsConfigs, tsConfigs) {
 }
 
 module.exports = {
-  config,
-  default: [
+  compat: () => [
     ...compat.extends(...legacyExtends),
     ...tseslint.configs.recommendedTypeChecked,
     ...tseslint.configs.strictTypeChecked,
@@ -45,6 +44,7 @@ module.exports = {
       },
     },
   ],
+  config,
   legacy: {
     extends: [
       ...legacyExtends,
