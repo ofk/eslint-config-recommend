@@ -30,6 +30,16 @@ const turnOff = {
 
 const bestPractices = {
   rules: {
+    // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
+    'perfectionist/sort-imports': [
+      'error',
+      {
+        ...recommendedNatural.rules['perfectionist/sort-imports'][1],
+        'internal-pattern': [
+          '@/**', // next.js default pattern
+        ],
+      },
+    ],
     // https://eslint-plugin-perfectionist.azat.io/rules/sort-jsx-props
     'perfectionist/sort-jsx-props': [
       'error',
