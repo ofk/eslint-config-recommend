@@ -32,19 +32,7 @@ module.exports = {
       },
     },
     ...(isInstalled('react') && isInstalled('vite') ? [jsxRuntime] : []),
-    ...(isInstalled('react') && isInstalled('next')
-      ? [
-          jsxRuntime,
-          {
-            files: ['app/**/{page,layout}.tsx'],
-            rules: {
-              'import/no-default-export': 'off',
-              'import/prefer-default-export': 'error',
-              'react-refresh/only-export-components': 'off',
-            },
-          },
-        ]
-      : []),
+    ...(isInstalled('react') && isInstalled('next') ? [jsxRuntime] : []),
   ],
   typescript: [
     {
