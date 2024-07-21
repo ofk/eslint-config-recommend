@@ -8,17 +8,17 @@ const typescript = require('./typescript.cjs');
 
 function mergeConfig(...configs) {
   return configs.reduce(
-    (acc, { files, ...config }) => ({
+    (acc, config) => ({
       ...acc,
       ...config,
       extends: [...acc.extends, ...(Array.isArray(config.extends) ? config.extends : [])],
       overrides: [
         ...acc.overrides,
         ...(Array.isArray(config.overrides) ? config.overrides : []),
-        ...(files && config.rules ? [{ files, rules: config.rules }] : []),
+        ...(config.files && config.rules ? [{ files: config.files, rules: config.rules }] : []),
       ],
       plugins: [...acc.plugins, ...(Array.isArray(config.plugins) ? config.plugins : [])],
-      rules: { ...acc.rules, ...(files ? config.rules ?? {} : {}) },
+      rules: { ...acc.rules, ...(config.files ? config.rules ?? {} : {}) },
     }),
     {
       extends: [],
