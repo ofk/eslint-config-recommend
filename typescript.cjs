@@ -1,5 +1,6 @@
 const { FlatCompat } = require('@eslint/eslintrc');
 const tseslint = require('typescript-eslint');
+
 const { isInstalled } = require('./isInstalled.cjs');
 
 const compat = new FlatCompat();

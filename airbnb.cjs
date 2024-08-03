@@ -1,4 +1,5 @@
 const { FlatCompat } = require('@eslint/eslintrc');
+
 const { isInstalled } = require('./isInstalled.cjs');
 
 const compat = new FlatCompat();
