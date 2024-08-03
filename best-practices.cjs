@@ -13,6 +13,19 @@ module.exports = {
         'import/no-default-export': 'error',
         'import/prefer-default-export': 'off',
 
+        // Fix airbnb default rule.
+        // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md
+        'jsx-a11y/label-has-associated-control': [
+          'error',
+          {
+            assert: 'either', // changed
+            controlComponents: [],
+            depth: 25,
+            labelAttributes: [],
+            labelComponents: [],
+          },
+        ],
+
         // Use console.{warn,error} intentionally. So suppress the warning.
         // https://eslint.org/docs/rules/no-console
         'no-console': [

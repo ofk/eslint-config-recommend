@@ -17,6 +17,9 @@ const App: React.FC<AppProps> = ({ name, onButtonClick }) => {
     <div>
       <Text color={text ? 'red' : undefined}>{text ?? 'Push button'}</Text>
       <Button onClick={onClick}>Hello</Button>
+      <label>
+        <input type="checkbox" /> checkbox
+      </label>
     </div>
   );
 };
