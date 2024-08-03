@@ -1,4 +1,6 @@
-const recommendedNatural = require('eslint-plugin-perfectionist/configs/recommended-natural');
+const perfectionist = require('eslint-plugin-perfectionist');
+
+const recommendedNatural = perfectionist.configs['recommended-natural'];
 
 // https://eslint-plugin-perfectionist.azat.io/
 
@@ -35,7 +37,7 @@ const bestPractices = {
       'error',
       {
         ...recommendedNatural.rules['perfectionist/sort-imports'][1],
-        'internal-pattern': [
+        internalPattern: [
           '@/**', // next.js default pattern
         ],
       },
@@ -44,22 +46,11 @@ const bestPractices = {
     'perfectionist/sort-jsx-props': [
       'error',
       {
-        'custom-groups': {
+        ...recommendedNatural.rules['perfectionist/sort-jsx-props'][1],
+        customGroups: {
           reserved: '{key,ref}',
         },
         groups: ['reserved', 'unknown'],
-        order: 'asc',
-        type: 'natural',
-      },
-    ],
-
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-union-types
-    'perfectionist/sort-union-types': [
-      'error',
-      {
-        'nullable-last': true,
-        order: 'asc',
-        type: 'natural',
       },
     ],
   },
@@ -68,7 +59,7 @@ const bestPractices = {
 module.exports = {
   default: [recommendedNatural, turnOff, bestPractices],
   legacy: {
-    extends: ['plugin:perfectionist/recommended-natural'],
+    extends: ['plugin:perfectionist/recommended-natural-legacy'],
     rules: { ...turnOff.rules, ...bestPractices.rules },
   },
 };

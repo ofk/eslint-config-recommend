@@ -1,4 +1,5 @@
 const reactRefresh = require('eslint-plugin-react-refresh');
+
 const { isInstalled } = require('./isInstalled.cjs');
 
 // https://github.com/ArnaudBarre/eslint-plugin-react-refresh

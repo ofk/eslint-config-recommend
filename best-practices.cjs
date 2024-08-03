@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/extensions
 const jsxRuntime = require('eslint-plugin-react/configs/jsx-runtime.js');
+
 const { isInstalled } = require('./isInstalled.cjs');
 
 module.exports = {
