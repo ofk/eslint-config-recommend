@@ -2,37 +2,41 @@ const perfectionist = require('eslint-plugin-perfectionist');
 
 const recommendedNatural = perfectionist.configs['recommended-natural'];
 
-// https://eslint-plugin-perfectionist.azat.io/
+// https://perfectionist.dev/
 
 const turnOff = {
   rules: {
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-interfaces
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-object-types
+    // https://perfectionist.dev/rules/sort-interfaces
+    // https://perfectionist.dev/rules/sort-object-types
     '@typescript-eslint/adjacent-overload-signatures': 'off',
 
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-intersection-types
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-union-types
+    // https://perfectionist.dev/rules/sort-intersection-types
+    // https://perfectionist.dev/rules/sort-union-types
     '@typescript-eslint/sort-type-constituents': 'off',
 
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-named-imports
+    // https://perfectionist.dev/rules/sort-imports
+    // https://perfectionist.dev/rules/sort-named-imports
     'import/order': 'off',
 
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-jsx-props
+    // https://perfectionist.dev/rules/sort-jsx-props
     'react/jsx-sort-props': 'off',
 
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-named-imports
+    // https://perfectionist.dev/rules/sort-imports
+    // https://perfectionist.dev/rules/sort-named-imports
     'sort-imports': 'off',
 
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-objects
+    // https://perfectionist.dev/rules/sort-objects
     'sort-keys': 'off',
   },
 };
 
+Object.keys(recommendedNatural.rules).forEach((name) => {
+  recommendedNatural.rules[name][1].ignoreCase = false;
+});
+
 const bestPractices = {
   rules: {
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-imports
+    // https://perfectionist.dev/rules/sort-imports
     'perfectionist/sort-imports': [
       'error',
       {
@@ -43,7 +47,7 @@ const bestPractices = {
         ],
       },
     ],
-    // https://eslint-plugin-perfectionist.azat.io/rules/sort-jsx-props
+    // https://perfectionist.dev/rules/sort-jsx-props
     'perfectionist/sort-jsx-props': [
       'error',
       {
