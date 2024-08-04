@@ -36,6 +36,7 @@ Object.keys(recommendedNatural.rules).forEach((name) => {
 
 const bestPractices = {
   rules: {
+    ...recommendedNatural.rules,
     // https://perfectionist.dev/rules/sort-imports
     'perfectionist/sort-imports': [
       'error',
