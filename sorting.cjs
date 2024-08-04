@@ -39,6 +39,7 @@ const bestPractices = {
         ...recommendedNatural.rules['perfectionist/sort-imports'][1],
         internalPattern: [
           '@/**', // next.js default pattern
+          '~/**', // remix default pattern
         ],
       },
     ],
