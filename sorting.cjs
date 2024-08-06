@@ -42,6 +42,18 @@ const bestPractices = {
       'error',
       {
         ...recommendedNatural.rules['perfectionist/sort-imports'][1],
+        groups: [
+          'type',
+          ['builtin', 'external'],
+          'internal-type',
+          'internal',
+          ['parent-type', 'sibling-type', 'index-type'],
+          ['parent', 'sibling', 'index'],
+          'object',
+          'side-effect',
+          'style',
+          'unknown',
+        ],
         internalPattern: [
           '@/**', // next.js default pattern
           '~/**', // remix default pattern
