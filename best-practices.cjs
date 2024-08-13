@@ -14,19 +14,6 @@ module.exports = {
         'import/no-default-export': 'error',
         'import/prefer-default-export': 'off',
 
-        // Fix airbnb default rule.
-        // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md
-        'jsx-a11y/label-has-associated-control': [
-          'error',
-          {
-            assert: 'either', // changed
-            controlComponents: [],
-            depth: 25,
-            labelAttributes: [],
-            labelComponents: [],
-          },
-        ],
-
         // Use console.{warn,error} intentionally. So suppress the warning.
         // https://eslint.org/docs/rules/no-console
         'no-console': [
@@ -38,6 +25,18 @@ module.exports = {
 
         ...(isInstalled('react')
           ? {
+              // Fix airbnb default rule.
+              // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md
+              'jsx-a11y/label-has-associated-control': [
+                'error',
+                {
+                  assert: 'either', // changed
+                  controlComponents: [],
+                  depth: 25,
+                  labelAttributes: [],
+                  labelComponents: [],
+                },
+              ],
               // Disable this rule if it conflicts with some rules.
               // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
               'react/function-component-definition': 'off',
