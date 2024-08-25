@@ -25,7 +25,9 @@
     "prepare": "husky install",
     "test": "run-p test:*",
     "test:javascript": "ESLINT_USE_FLAT_CONFIG=true eslint -c test/eslint.config.mjs test/javascript",
-    "test:typescript": "ESLINT_USE_FLAT_CONFIG=true eslint -c test/eslint.config.mjs test/typescript"
+    "test:javascript-legacy": "eslint -c test/.eslintrc.json test/javascript",
+    "test:typescript": "ESLINT_USE_FLAT_CONFIG=true eslint -c test/eslint.config.mjs test/typescript",
+    "test:typescript-legacy": "eslint -c test/.eslintrc.json test/typescript"
   },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.4.0",
