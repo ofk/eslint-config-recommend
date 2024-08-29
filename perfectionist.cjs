@@ -52,6 +52,14 @@ module.exports = {
             groups: ['reserved', 'unknown'],
           },
         ],
+        // https://perfectionist.dev/rules/sort-union-types
+        'perfectionist/sort-union-types': [
+          'error',
+          {
+            ...recommendedNatural.rules['perfectionist/sort-union-types'][1],
+            groups: ['unknown', 'nullish'],
+          },
+        ],
       },
     },
     {
