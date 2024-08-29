@@ -1,20 +1,39 @@
 const airbnb = require('./airbnb.cjs');
-const bestPractices = require('./best-practices.cjs');
-const comments = require('./comments.cjs');
+const eslintComments = require('./eslint-comments.cjs');
+const perfectionist = require('./perfectionist.cjs');
 const prettier = require('./prettier.cjs');
 const reactRefresh = require('./react-refresh.cjs');
-const sorting = require('./sorting.cjs');
 const typescript = require('./typescript.cjs');
 
 function mergeConfig(...configs) {
   return configs.reduce(
-    (acc, config) => ({
+    (
+      acc,
+      {
+        env,
+        extends: configExtends,
+        files,
+        globals,
+        overrides,
+        parser,
+        parserOptions,
+        plugins,
+        rules,
+      },
+    ) => ({
       ...acc,
-      ...config,
-      extends: [...acc.extends, ...(Array.isArray(config.extends) ? config.extends : [])],
-      overrides: [...acc.overrides, ...(Array.isArray(config.overrides) ? config.overrides : [])],
-      plugins: [...acc.plugins, ...(Array.isArray(config.plugins) ? config.plugins : [])],
-      rules: { ...acc.rules, ...(config.rules ?? {}) },
+      env: env ?? acc.env,
+      extends: [...acc.extends, ...(Array.isArray(configExtends) ? configExtends : [])],
+      globals: { ...acc.globals, ...(globals ?? {}) },
+      overrides: [
+        ...acc.overrides,
+        ...(Array.isArray(overrides) ? overrides : []),
+        ...(rules && files ? [{ files, rules }] : []),
+      ],
+      parser: parser ?? acc.parser,
+      parserOptions: parserOptions ?? acc.parserOptions,
+      plugins: [...acc.plugins, ...(Array.isArray(plugins) ? plugins : [])],
+      rules: { ...acc.rules, ...(rules && !files ? rules : {}) },
     }),
     {
       extends: [],
@@ -32,11 +51,14 @@ module.exports = mergeConfig(
     },
   },
   airbnb.legacy,
+  ...airbnb.recommended,
   typescript.legacy,
+  ...typescript.recommended,
   reactRefresh.legacy,
-  comments.legacy,
-  sorting.legacy,
-  ...bestPractices.default,
-  ...bestPractices.typescript,
+  ...reactRefresh.recommended,
+  eslintComments.legacy,
+  ...eslintComments.recommended,
+  perfectionist.legacy,
+  ...perfectionist.recommended,
   prettier.legacy,
 );
