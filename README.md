@@ -9,7 +9,7 @@ It uses [Airbnb TypeScript](https://github.com/iamturns/eslint-config-airbnb-typ
 1. Install the following dev-dependencies:
 
    ```sh
-   npm install --save-dev @ofk/eslint-config-recommend @typescript-eslint/eslint-plugin@^7.0.0 @typescript-eslint/parser@^7.0.0 eslint prettier typescript
+   npm install --save-dev @ofk/eslint-config-recommend @typescript-eslint/eslint-plugin@7 @typescript-eslint/parser@7 eslint@8 prettier typescript
    ```
 
 2. Extend the `@ofk/eslint-config-recommend` config in your `.eslintrc` (or `eslintConfig` key in your `package.json`):

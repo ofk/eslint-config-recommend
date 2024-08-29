@@ -1,3 +1,4 @@
-import config from '../browser.cjs';
+import configs from '../configs.cjs';
 
-export default config;
+// eslint-disable-next-line import/no-default-export
+export default configs.browser;
