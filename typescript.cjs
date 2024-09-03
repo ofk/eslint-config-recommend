@@ -142,5 +142,5 @@ module.exports = isInstalled('typescript')
   : {
       compat: () => [],
       legacy: {},
-      recommended: {},
+      recommended: [],
     };
