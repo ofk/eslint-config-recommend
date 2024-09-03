@@ -26,5 +26,5 @@ module.exports = isInstalled('react')
   : {
       flat: [],
       legacy: {},
-      recommended: {},
+      recommended: [],
     };
