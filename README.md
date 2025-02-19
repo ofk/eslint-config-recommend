@@ -2,30 +2,30 @@
 
 This is an my eslint config.
 
-It uses [Airbnb TypeScript](https://github.com/iamturns/eslint-config-airbnb-typescript) as a base, has [Prettier](https://prettier.io/) and [TypeScript ESLint](https://typescript-eslint.io/) baked in, and overrides some rules I've seen ourselves having to change often.
+It uses [@ofk/eslint-config](https://github.com/ofk/eslint-config) as a base, has [Prettier](https://prettier.io/) baked in, and overrides some rules I've seen ourselves having to change often.
 
 ## Quick start
 
 1. Install the following dev-dependencies:
 
    ```sh
-   npm install --save-dev @ofk/eslint-config-recommend @typescript-eslint/eslint-plugin@7 @typescript-eslint/parser@7 eslint@8 prettier typescript
+   npm install --save-dev @ofk/eslint-config-recommend eslint prettier typescript
    ```
 
-2. Extend the `@ofk/eslint-config-recommend` config in your `.eslintrc` (or `eslintConfig` key in your `package.json`):
+2. Extend the `@ofk/eslint-config-recommend` config in your `eslint.config.js`:
 
    ```js
-   "eslintConfig": {
-     "extends": "@ofk/eslint-config-recommend"
-   }
+   import config from '@ofk/eslint-config-recommend';
+
+   export default config();
    ```
 
 3. Run `eslint` on your project as part of your `lint` and `format` scripts:
 
    ```js
    "scripts": {
-     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-     "format": "npm run lint -- --fix",
+     "lint": "eslint . && prettier --check .",
+     "format": "eslint --fix . && prettier --write .",
      "pretest": "npm run lint",
      "test": "test command"
    }
@@ -34,7 +34,7 @@ It uses [Airbnb TypeScript](https://github.com/iamturns/eslint-config-airbnb-typ
 4. (Optional) Set up prettier config in `prettier` key in your `package.json`:
 
    ```js
-   "prettier": "@ofk/eslint-config-recommend/.prettierrc"
+   "prettier": "@ofk/eslint-config-recommend/.prettierrc.json"
    ```
 
    Read more about shared configs [here](https://prettier.io/blog/2019/04/12/1.17.0.html#config), especially if you need to extend/override the default configuration.
