@@ -10,30 +10,38 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./.prettierrc.json": "./.prettierrc.json"
   },
-  "main": "./dist/index.js",
   "files": [
     ".prettierrc.json",
     "dist"
   ],
   "scripts": {
     "build": "tsup",
+    "prelint": "npm run build",
     "lint": "run-s lint:*",
-    "lint:eslint": "eslint .",
+    "lint:eslint": "eslint --config eslint.config.mjs .",
+    "lint:eslint-cjs": "eslint --config eslint.config.cjs .",
     "lint:prettier": "prettier --check .",
     "lint:prettier-package-json": "prettier-package-json --list-different",
+    "prelint-fix": "npm run build",
     "lint-fix": "run-s lint-fix:*",
-    "lint-fix:eslint": "eslint --fix .",
+    "lint-fix:eslint": "eslint --config eslint.config.mjs --fix .",
     "lint-fix:prettier": "prettier --write .",
     "lint-fix:prettier-package-json": "prettier-package-json --write",
     "prepare": "husky",
     "prepublishOnly": "npm run build",
     "test": "run-s lint"
   },
-  "types": "./dist/index.d.ts",
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
     "@eslint/js": "^9.23.0",
@@ -66,10 +74,14 @@
     "typescript": "^5.8.2"
   },
   "lint-staged": {
-    "*.{js,jsx,json,md,ts,tsx}": "prettier --write",
     "package.json": [
       "prettier --write",
       "npm run lint-fix:prettier-package-json"
+    ],
+    "*.{json,md,html}": "prettier --write",
+    "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}": [
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "packageManager": "npm@10.8.0+sha512.c21f77b91733829ec70e73cc88b5dc0a4bf685a81d252d3327d293ff7d5dd05a173f4dbeaa037600ec29696f397f14569229e5dab10b7cfc3e0a30575b8f3f8d"

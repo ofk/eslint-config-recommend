@@ -7,9 +7,11 @@ export default defineConfig({
           js: `import { createRequire } from 'module'; const require = createRequire(import.meta.url);`,
         }
       : {},
+  cjsInterop: true,
   clean: true,
   dts: true,
   entry: ['src/index.ts'],
   format: ['cjs', 'esm'],
   skipNodeModulesBundle: true,
+  splitting: true,
 });
