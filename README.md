@@ -1,5 +1,8 @@
 # @ofk/eslint-config-recommend
 
+[![npm](https://img.shields.io/npm/v/@ofk/eslint-config-recommend)](https://npmjs.com/package/@ofk/eslint-config-recommend)
+![ci](https://github.com/ofk/eslint-config-recommend/actions/workflows/ci.yml/badge.svg)
+
 This is an my eslint config.
 
 It uses [@ofk/eslint-config](https://github.com/ofk/eslint-config) as a base, has [Prettier](https://prettier.io/) baked in, and overrides some rules I've seen ourselves having to change often.
