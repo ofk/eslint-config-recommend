@@ -1,6 +1,6 @@
 {
   "name": "@ofk/eslint-config-recommend",
-  "version": "7.5.0",
+  "version": "8.0.0",
   "description": "eslint config with typescript and prettier support",
   "license": "MIT",
   "author": "ofk (https://github.com/ofk/)",
